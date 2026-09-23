@@ -64,4 +64,4 @@ Cloud 专为重视代码安全与隐私保护的软件工程师设计：
 
 如果您对本隐私政策有任何疑问或需要行使您的数据权利，请通过以下方式联系：
 - **GitHub Issues**: [https://github.com/cddchen/Cloud/issues](https://github.com/cddchen/Cloud/issues)
-- **Email**: `support@cddchen.com`
+- **Email**: `cddch1n@icloud.com`

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud - Privacy Policy | 隐私政策</title>
+  <meta name="description" content="Privacy Policy for Cloud, the mobile companion for AI coding agents. Zero-relay, direct private connection.">
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('cloud_support_lang');
+        if (saved === 'zh' || saved === 'en') {
+          document.documentElement.lang = saved;
+        } else {
+          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          if (nav.toLowerCase().startsWith('zh')) {
+            document.documentElement.lang = 'zh';
+          } else {
+            document.documentElement.lang = 'en';
+          }
+        }
+      } catch (e) {
+        document.documentElement.lang = 'en';
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(255, 255, 255, 0.16);
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html[lang="en"] .lang-zh {
+      display: none !important;
+    }
+    html[lang="zh"] .lang-en {
+      display: none !important;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 1.25rem 4rem;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      padding: 3px;
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.35rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    header {
+      padding: 1rem 0 2rem;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .content h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      letter-spacing: -0.01em;
+      color: #fff;
+    }
+
+    .content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+      color: #e5e7eb;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+      color: #d1d5db;
+    }
+
+    .content ul {
+      margin: 0.5rem 0 1.25rem 1.5rem;
+      color: #d1d5db;
+    }
+
+    .content li {
+      margin-bottom: 0.4rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      backdrop-filter: blur(20px);
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <a class="back-link" href="index.html">
+        <span class="lang-en">&larr; Back to Support</span>
+        <span class="lang-zh">&larr; 返回技术支持主页</span>
+      </a>
+      <div class="lang-switcher">
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button id="btn-zh" class="lang-btn" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+
+    <!-- English Version -->
+    <div class="lang-en">
+      <header>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: September 23, 2026 &middot; App Version: 1.0.0</p>
+      </header>
+
+      <div class="content">
+        <div class="card">
+          <p style="margin: 0; font-weight: 500;">
+            Summary: Cloud is designed with zero telemetry and zero cloud relay. All communication occurs directly between your mobile device and your self-hosted server.
+          </p>
+        </div>
+
+        <h2>1. Core Privacy Principles</h2>
+        <p>Cloud is built for software engineers who value strict code confidentiality and data sovereignty:</p>
+        <ul>
+          <li><strong>Zero-Relay, Zero-Storage</strong>: We do not operate intermediary servers that intercept, cache, or store your source code, prompts, or LLM conversations.</li>
+          <li><strong>Pure Direct Connection</strong>: The mobile client connects directly to your designated Host server over your private network, LAN, or Tailscale mesh.</li>
+          <li><strong>No User Profiling or Tracking</strong>: Cloud contains no commercial advertisement SDKs, analytics frameworks, or behavioral profiling tools.</li>
+        </ul>
+
+        <h2>2. Data Collection and Usage</h2>
+        <h3>2.1 Local Connection Data</h3>
+        <p>To enable network connectivity with your development environment, Cloud locally persists:</p>
+        <ul>
+          <li>Host server network addresses (e.g., IP address, port, domain);</li>
+          <li>Host Access Tokens for authentication;</li>
+          <li>UI preferences such as theme, font sizing, and preferred language.</li>
+        </ul>
+        <p><strong>Security Guarantee</strong>: Sensitive credentials (access tokens) are exclusively stored in platform-native secure hardware enclaves (iOS <strong>Keychain</strong> and Android <strong>Keystore</strong>), protected against unauthorized access.</p>
+
+        <h3>2.2 Transmission of Session and Code Data</h3>
+        <ul>
+          <li>Chat conversations, syntax-highlighted code blocks, and tool execution logs stream directly between your mobile client and your private host.</li>
+          <li>Data travels directly to and from your self-hosted environment. The developers of Cloud cannot view, collect, or audit any of your data.</li>
+        </ul>
+
+        <h2>3. Third-Party Services and SDKs</h2>
+        <ul>
+          <li>Cloud does <strong>not</strong> integrate third-party ad networks (such as Google AdMob) or behavioral telemetry trackers (such as Firebase Analytics or Mixpanel).</li>
+          <li>Network interactions are powered by the Claude Agent SDK protocol connecting to your self-hosted host. Any external LLM API usage is governed by your own API agreements with respective model providers.</li>
+        </ul>
+
+        <h2>4. Security Safeguards</h2>
+        <ul>
+          <li>Encrypted transport protocols (TLS/HTTPS/WSS) are fully supported.</li>
+          <li>Destructive operations (such as file modifications or shell execution) require interactive approval via mobile Bottom Sheets.</li>
+          <li>Users may wipe all local credentials and cached session indexes at any time via in-app settings.</li>
+        </ul>
+
+        <h2>5. Children's Privacy</h2>
+        <p>Cloud is a specialized tool intended for professional software developers and does not knowingly collect personal data from children under the age of 13.</p>
+
+        <h2>6. Changes to This Policy</h2>
+        <p>Any updates to this Privacy Policy will be published directly to this public repository and website.</p>
+
+        <h2>7. Contact Information</h2>
+        <p>For questions or requests regarding this Privacy Policy, please contact:</p>
+        <ul>
+          <li><strong>Email</strong>: <a href="mailto:cddch1n@icloud.com" style="color: var(--accent);">cddch1n@icloud.com</a></li>
+          <li><strong>GitHub Issues</strong>: <a href="https://github.com/cddchen/Cloud/issues" style="color: var(--accent);" target="_blank" rel="noopener">https://github.com/cddchen/Cloud/issues</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Chinese Version -->
+    <div class="lang-zh">
+      <header>
+        <h1>隐私政策 (Privacy Policy)</h1>
+        <p class="meta">最近更新日期：2026 年 9 月 23 日 &middot; 适用版本：1.0.0</p>
+      </header>
+
+      <div class="content">
+        <div class="card">
+          <p style="margin: 0; font-weight: 500;">
+            核心概要：Cloud 坚持“零中继、零云端存储”理念。所有代码、指令与会话数据仅在您的移动端与您的私有服务端之间直接传输。
+          </p>
+        </div>
+
+        <h2>1. 核心隐私原则</h2>
+        <p>Cloud 专为重视代码安全与商业机密的开发者打造：</p>
+        <ul>
+          <li><strong>零中继与零存储 (Zero-Relay, Zero-Storage)</strong>：我们不设立任何收集或缓存您代码、Prompt、聊天会话的云端中间服务器；</li>
+          <li><strong>纯私有直连 (Direct Private Connection)</strong>：客户端与您指定的 Host 服务端建立端到端直连通信（局域网、Tailscale 或反向代理）；</li>
+          <li><strong>无用户画像与追踪 (No Tracking, No Profiling)</strong>：本应用不包含广告 SDK、第三方行为追踪统计或分析 SDK。</li>
+        </ul>
+
+        <h2>2. 数据收集与处理说明</h2>
+        <h3>2.1 本地存储的配置与凭据</h3>
+        <p>为了使应用正常连接至您的开发环境，应用会在本地设备中持久化保存：</p>
+        <ul>
+          <li>服务端地址与端口（如局域网 IP、域名或 Tailscale 节点）；</li>
+          <li>鉴权访问令牌 (Host Access Token)；</li>
+          <li>界面外观、字体大小及语言等偏好设置。</li>
+        </ul>
+        <p><strong>安全保证</strong>：敏感访问令牌由操作系统的硬件安全模块托管（iOS 采用 <strong>Keychain</strong>，Android 采用 <strong>Keystore</strong>），外部应用无法读取。</p>
+
+        <h3>2.2 传输中的会话与代码数据</h3>
+        <ul>
+          <li>会话交互、代码高亮、终端输出均仅在移动端与您的 Host 服务端之间直接传输；</li>
+          <li>数据均直接流向您自己托管或配置的服务端，本应用开发者无法获知、收集或审查您的任何业务数据。</li>
+        </ul>
+
+        <h2>3. 第三方服务与 SDK 说明</h2>
+        <ul>
+          <li>本应用<strong>不集成</strong>任何第三方商业广告（如 Google AdMob）、行为数据分析平台（如 Google Analytics、Firebase 等）；</li>
+          <li>本应用使用 Claude Agent SDK 协议与服务端通信，相关 LLM API 调用直接取决于您在服务端配置的模型服务商。</li>
+        </ul>
+
+        <h2>4. 数据安全保障</h2>
+        <ul>
+          <li>支持基于 TLS/HTTPS/WSS 的端到端加密传输；</li>
+          <li>支持敏感操作（命令执行、文件覆写）移动端双重确认与审批机制；</li>
+          <li>移动端会话缓存仅用于离线浏览历史，用户可随时通过“清空缓存”或“移除 Host”在端侧彻底擦除所有关联数据。</li>
+        </ul>
+
+        <h2>5. 儿童隐私</h2>
+        <p>本应用面向专业软件开发者，不针对也不意图收集 13 岁以下未成年人的个人信息。</p>
+
+        <h2>6. 隐私政策的更新</h2>
+        <p>若隐私政策有重大变更，我们将通过 GitHub 仓库与本页面公布最新修订版本。</p>
+
+        <h2>7. 联系我们</h2>
+        <p>如果您对本隐私政策有任何疑问或需要行使您的数据权利，请通过以下方式联系：</p>
+        <ul>
+          <li><strong>联系邮箱</strong>：<a href="mailto:cddch1n@icloud.com" style="color: var(--accent);">cddch1n@icloud.com</a></li>
+          <li><strong>GitHub Issues</strong>：<a href="https://github.com/cddchen/Cloud/issues" style="color: var(--accent);" target="_blank" rel="noopener">https://github.com/cddchen/Cloud/issues</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p style="margin-bottom: 0.5rem;">
+        本产品是基于 Claude Agent SDK 构建的独立产品，与 Anthropic 不存在隶属、背书或赞助关系。
+      </p>
+      <p>
+        &copy; 2026 cddchen. All rights reserved.
+        <a href="index.html">返回支持主页</a>
+        <a href="terms.html">服务条款 (Terms)</a>
+        <a href="https://github.com/cddchen/Cloud">GitHub 仓库</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function updateSwitcherUI(lang) {
+      var btnEn = document.getElementById('btn-en');
+      var btnZh = document.getElementById('btn-zh');
+      if (btnEn && btnZh) {
+        if (lang === 'zh') {
+          btnZh.classList.add('active');
+          btnEn.classList.remove('active');
+        } else {
+          btnEn.classList.add('active');
+          btnZh.classList.remove('active');
+        }
+      }
+    }
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      try {
+        localStorage.setItem('cloud_support_lang', lang);
+      } catch (e) {}
+      updateSwitcherUI(lang);
+      if (lang === 'zh') {
+        document.title = "Cloud - 隐私政策 | Privacy Policy";
+      } else {
+        document.title = "Cloud - Privacy Policy";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var currentLang = document.documentElement.lang || 'en';
+      updateSwitcherUI(currentLang);
+    });
+  </script>
+</body>
+</html>

@@ -327,8 +327,8 @@
             <a class="btn" href="https://github.com/cddchen/Cloud/issues" target="_blank" rel="noopener">
               <span>🐛</span> Submit GitHub Issue
             </a>
-            <a class="btn btn-secondary" href="mailto:support@cddchen.com">
-              <span>✉️</span> Email Support
+            <a class="btn btn-secondary" href="mailto:cddch1n@icloud.com">
+              <span>✉️</span> Email Support (cddch1n@icloud.com)
             </a>
             <a class="btn btn-secondary" href="PRIVACY.md">
               <span>🔒</span> Privacy Policy
@@ -347,8 +347,8 @@
             <a class="btn" href="https://github.com/cddchen/Cloud/issues" target="_blank" rel="noopener">
               <span>🐛</span> 提交 GitHub Issue
             </a>
-            <a class="btn btn-secondary" href="mailto:support@cddchen.com">
-              <span>✉️</span> 邮箱联系技术支持
+            <a class="btn btn-secondary" href="mailto:cddch1n@icloud.com">
+              <span>✉️</span> 邮箱联系技术支持 (cddch1n@icloud.com)
             </a>
             <a class="btn btn-secondary" href="PRIVACY.md">
               <span>🔒</span> 隐私政策 (Privacy)
@@ -363,17 +363,24 @@
       <div class="lang-en">
         <h2 class="section-title">⚡ Quick Deployment & Host Setup</h2>
         <div class="card">
+          <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.95rem;">
+            Cloud utilizes a direct client-to-host architecture, connecting via Public Network, LAN, or Tailscale Mesh. Data streams directly via the Claude Agent SDK without passing through third-party services.
+          </p>
           <p><strong>Step 1: Start the Host service on your workstation or VM</strong></p>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-            Requires Node.js &gt;= 22. Configure a secure access token and start:
+            Requires Node.js &gt;= 22 and Claude Code. Launch via CLI parameters or environment variables:
           </p>
-          <pre><code>export HOST_AUTH_TOKEN="your-secure-token"
+          <pre><code># 1. Start via CLI parameters (default port: 8787, random 6-digit token)
+npx @cddchen/cloud@latest start --port=8787 --token=your-secure-random-token --global
+
+# 2. Or configure via environment variables
+export HOST_AUTH_TOKEN="your-secure-random-token"
 export HOST_PORT=3000
-node dist/index.js --port 3000</code></pre>
+npx @cddchen/cloud@latest start --global</code></pre>
 
           <p style="margin-top: 1rem;"><strong>Step 2: Connect from Mobile Device</strong></p>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-            Open <strong>Cloud</strong> on your mobile device, navigate to "Connection Settings", enter your Host address (e.g. <code>http://192.168.1.100:3000</code> or Tailscale node) and token, then tap "Test &amp; Connect" to synchronize.
+            Open <strong>Cloud</strong> on your mobile device, navigate to "Connection Settings", enter your Host address (e.g. <code>http://192.168.1.100:8787</code> or Tailscale node) and token, then tap "Test &amp; Connect" to synchronize.
           </p>
         </div>
       </div>
@@ -381,17 +388,24 @@ node dist/index.js --port 3000</code></pre>
       <div class="lang-zh">
         <h2 class="section-title">⚡ 快速部署与连接指南</h2>
         <div class="card">
+          <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.95rem;">
+            Cloud 采用客户端-服务端直连架构，通过公网/局域网/Tailscale组网等形式直连宿主机，基于 Claude Agent SDK 直接传输数据，不通过任何第三方服务。
+          </p>
           <p><strong>第一步：在电脑或工作站启动 Host 服务</strong></p>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-            需要 Node.js &gt;= 22。在您的项目服务端目录配置安全 Token 并运行：
+            环境要求 Node.js &gt;= 22 与 Claude Code。可通过 CLI 参数或环境变量配置：
           </p>
-          <pre><code>export HOST_AUTH_TOKEN="your-secure-token"
+          <pre><code># 1. 通过命令行工具参数启动（默认端口 8787，默认随机 6 位数 Token）
+npx @cddchen/cloud@latest start --port=8787 --token=your-secure-random-token --global
+
+# 2. 通过环境变量设置
+export HOST_AUTH_TOKEN="your-secure-random-token"
 export HOST_PORT=3000
-node dist/index.js --port 3000</code></pre>
+npx @cddchen/cloud@latest start --global</code></pre>
 
           <p style="margin-top: 1rem;"><strong>第二步：移动端配对连接</strong></p>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-            打开手机端 <strong>Cloud</strong> App，在“连接设置”输入您的 Host 地址（如 <code>http://192.168.1.100:3000</code> 或 Tailscale 节点）及预设 Token，点击“测试并连接”即可完成同步。
+            打开手机端 <strong>Cloud</strong> App，在“连接设置”输入您的 Host 地址（如 <code>http://192.168.1.100:8787</code> 或 Tailscale 节点）及设置的 Token，点击“测试并连接”即可完成同步。
           </p>
         </div>
       </div>

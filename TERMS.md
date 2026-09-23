@@ -38,4 +38,4 @@ Cloud 是一款连接并控制远程 AI 编程智能体（Agent）的移动端�
 我们保留随时更新或修订本服务条款的权利。
 
 - 官方仓库：[https://github.com/cddchen/Cloud](https://github.com/cddchen/Cloud)
-- 联系邮箱：`support@cddchen.com`
+- 联系邮箱：`cddch1n@icloud.com`

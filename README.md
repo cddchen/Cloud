@@ -30,38 +30,40 @@ If you encounter any issues, unexpected behaviors, or have feature suggestions w
    - [Submit a Bug Report](https://github.com/cddchen/Cloud/issues/new?template=bug_report.md)
    - [Submit a Feature Request](https://github.com/cddchen/Cloud/issues/new?template=feature_request.md)
 2. **Support Email**:
-   `support@cddchen.com`
-3. **Response Time**:
-   We typically review and respond to inquiries within 1-2 business days.
+   `cddch1n@icloud.com`
 
 ---
 
 ## Quick Start & Host Setup
 
-Cloud utilizes a **direct client-to-host architecture**. The mobile application (iOS / Android) operates as a control console that directly connects to the `cc-agent-host` instance running on your local workstation, virtual machine, or private server.
+Cloud utilizes a **direct client-to-host architecture**. The mobile application (iOS / Android) operates as a control console, connecting to the `cloud host` running on your local workstation or cloud server via `Public Network / LAN / Tailscale Mesh`. Data is transmitted directly based on the `Claude Agent SDK`, without passing through any third-party intermediate services.
 
 ### 1. Host System Requirements
 - **Operating System**: macOS, Linux
 - **Runtime**: Node.js >= 22.0.0
-- **Prerequisites**: Git, Claude Agent SDK runtime environment
+- **Prerequisites**: Claude Code
 
 ### 2. Launching the Host Service
-On your development machine or remote server, configure the environment variables and start the Host daemon:
+Configure parameters or environment variables on your workstation or server and start the Host:
 
 ```bash
-# 1. Configure the authentication token and listening port
+# 1. Start via CLI parameters
+# Default port: 8787 (if not specified)
+# Default token: random 6-digit number (if not specified)
+# Default network: LAN (omit --global) or Public/Tailscale (--global)
+npx @cddchen/cloud@latest start --port=8787 --token=your-secure-random-token --global
+
+# 2. Or configure via environment variables
 export HOST_AUTH_TOKEN="your-secure-random-token"
 export HOST_PORT=3000
-
-# 2. Launch the cc-agent-host service
-node dist/index.js --port 3000
+npx @cddchen/cloud@latest start --global
 ```
 
 ### 3. Pairing with Mobile Client
 1. Launch **Cloud** on your mobile device;
 2. Navigate to **Connection Settings**;
-3. Enter your Host address (e.g., LAN IP `http://192.168.1.100:3000`, Tailscale node, or reverse proxy domain);
-4. Enter the matching `HOST_AUTH_TOKEN`;
+3. Enter your Host address (e.g., LAN IP `http://192.168.1.100:3000` or Tailscale node address);
+4. Enter the configured `token`;
 5. Tap **Test & Connect**. Once connected, your active workspaces and sessions will automatically synchronize.
 
 ---
@@ -107,5 +109,5 @@ node dist/index.js --port 3000
 
 - **Maintainer**: cddchen
 - **Repository**: [https://github.com/cddchen/Cloud](https://github.com/cddchen/Cloud)
-- **Support Email**: `support@cddchen.com`
+- **Support Email**: `cddch1n@icloud.com`
 - **Current Version**: v1.0.0

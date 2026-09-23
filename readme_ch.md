@@ -29,38 +29,39 @@
    - [提交缺陷报告 (Bug Report)](https://github.com/cddchen/Cloud/issues/new?template=bug_report.md)
    - [提交功能建议 (Feature Request)](https://github.com/cddchen/Cloud/issues/new?template=feature_request.md)
 2. **技术支持邮箱**：
-   `support@cddchen.com`
-3. **响应时间承诺**：
-   我们通常会在 1-2 个工作日内对所有 Issue 和邮件进行响应与处理。
+   `cddch1n@icloud.com`
 
 ---
 
 ## 快速入门与服务端配置
 
-Cloud 采用 **客户端-服务端直连架构**。移动端应用（iOS / Android）作为控制终端，直接连接至您本地工作站或云服务器上运行的 `cc-agent-host`。
+Cloud 采用 **客户端-服务端直连架构**。移动端应用（iOS / Android）作为控制终端，通过`公网/局域网/Tailscale组网`等形式连接您本地工作站或云服务器上运行的 `cloud host`，基于`claude agent sdk`直接传输相关数据，不通过任何第三方服务。
 
 ### 1. 服务端环境要求
 - **操作系统**：macOS, Linux
 - **运行时环境**：Node.js >= 22.0.0
-- **前置依赖**：Git、Claude Agent SDK 运行环境
+- **前置依赖**：Claude Code
 
 ### 2. 启动 Host 服务
 在您的开发工作站或服务器上配置环境变量并启动 Host：
 
 ```bash
-# 1. 设置安全访问令牌 (Token) 与监听端口
+# 1. 通过命令行工具参数启动
+# port不设置默认8787
+# token不设置默认随机6位数
+# --global不设置默认局域网
+npx @cddchen/cloud@latest start --port=8787 --token=your-secure-random-token --global
+# 2. 通过环境变量设置
 export HOST_AUTH_TOKEN="your-secure-random-token"
 export HOST_PORT=3000
-
-# 2. 启动 cc-agent-host 服务
-node dist/index.js --port 3000
+npx @cddchen/cloud@latest start --global
 ```
 
 ### 3. 移动端配对连接
 1. 打开手机端 **Cloud** 应用；
 2. 进入 **连接设置 (Connection Settings)** 页面；
 3. 输入您的 Host 访问地址（例如局域网 IP `http://192.168.1.100:3000` 或 Tailscale 节点地址）；
-4. 填入预设的 `HOST_AUTH_TOKEN`；
+4. 填入设置的 `token`；
 5. 点击 **测试并连接**，状态变为“已连接”后，工作区与历史会话将自动同步。
 
 ---
@@ -106,5 +107,5 @@ node dist/index.js --port 3000
 
 - **开发者 / 维护者**：cddchen
 - **官方 GitHub**：[https://github.com/cddchen/Cloud](https://github.com/cddchen/Cloud)
-- **技术支持邮箱**：`support@cddchen.com`
+- **技术支持邮箱**：`cddch1n@icloud.com`
 - **最新版本**：v1.0.0
