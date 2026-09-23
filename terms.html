@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud - Terms of Service | 服务条款</title>
+  <meta name="description" content="Terms of Service for Cloud, the mobile companion for AI coding agents.">
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('cloud_support_lang');
+        if (saved === 'zh' || saved === 'en') {
+          document.documentElement.lang = saved;
+        } else {
+          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          if (nav.toLowerCase().startsWith('zh')) {
+            document.documentElement.lang = 'zh';
+          } else {
+            document.documentElement.lang = 'en';
+          }
+        }
+      } catch (e) {
+        document.documentElement.lang = 'en';
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(255, 255, 255, 0.16);
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html[lang="en"] .lang-zh {
+      display: none !important;
+    }
+    html[lang="zh"] .lang-en {
+      display: none !important;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 1.25rem 4rem;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      padding: 3px;
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.35rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    header {
+      padding: 1rem 0 2rem;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .content h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      letter-spacing: -0.01em;
+      color: #fff;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+      color: #d1d5db;
+    }
+
+    .content ul {
+      margin: 0.5rem 0 1.25rem 1.5rem;
+      color: #d1d5db;
+    }
+
+    .content li {
+      margin-bottom: 0.4rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      backdrop-filter: blur(20px);
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <a class="back-link" href="index.html">
+        <span class="lang-en">&larr; Back to Support</span>
+        <span class="lang-zh">&larr; 返回技术支持主页</span>
+      </a>
+      <div class="lang-switcher">
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button id="btn-zh" class="lang-btn" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+
+    <!-- English Version -->
+    <div class="lang-en">
+      <header>
+        <h1>Terms of Service</h1>
+        <p class="meta">Last updated: September 23, 2026 &middot; App Version: 1.0.0</p>
+      </header>
+
+      <div class="content">
+        <h2>1. Nature of the Software</h2>
+        <p>Cloud is a specialized companion client designed to observe, approve, and continue AI coding agent tasks across devices. The application communicates directly over private or local networks with host servers configured and maintained by the user.</p>
+
+        <div class="card">
+          <p style="margin: 0; font-weight: 500;">
+            Brand &amp; SDK Disclaimer: An independent product powered by the Claude Agent SDK. Not affiliated with, endorsed by, or sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic PBC.
+          </p>
+        </div>
+
+        <h2>2. User Responsibilities</h2>
+        <ul>
+          <li><strong>Lawful Use</strong>: Users agree to utilize the software solely for legitimate software development, debugging, and project administration.</li>
+          <li><strong>Host Environment Security</strong>: Users are solely responsible for securing their host machines, access tokens, firewall policies, and private network perimeter.</li>
+          <li><strong>Agent Execution Risks</strong>: When interactive tool approvals are granted or dangerous permissions are enabled, the user accepts responsibility for commands executed and file modifications made by the AI agent on the host machine.</li>
+        </ul>
+
+        <h2>3. Disclaimer of Warranty</h2>
+        <p>The software is provided "AS-IS" and on an "AS-AVAILABLE" basis, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+
+        <h2>4. Contact &amp; Updates</h2>
+        <p>For inquiries regarding these Terms of Service, please reach out via:</p>
+        <ul>
+          <li><strong>Email</strong>: <a href="mailto:cddch1n@icloud.com" style="color: var(--accent);">cddch1n@icloud.com</a></li>
+          <li><strong>Repository</strong>: <a href="https://github.com/cddchen/Cloud" style="color: var(--accent);" target="_blank" rel="noopener">https://github.com/cddchen/Cloud</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Chinese Version -->
+    <div class="lang-zh">
+      <header>
+        <h1>服务条款 (Terms of Service)</h1>
+        <p class="meta">最近更新日期：2026 年 9 月 23 日 &middot; 适用版本：1.0.0</p>
+      </header>
+
+      <div class="content">
+        <h2>1. 软件定位与性质</h2>
+        <p>Cloud 是一款连接并控制远程 AI 编程智能体（Agent）的移动端协同工具。本软件通过网络直接与用户自行部署和拥有的服务端（Host）建立通信。</p>
+
+        <div class="card">
+          <p style="margin: 0; font-weight: 500;">
+            免责声明与第三方商标归属：本产品是基于 Claude Agent SDK 构建的独立产品，与 Anthropic 不存在隶属、背书或赞助关系。Claude、Anthropic 均为 Anthropic PBC 的注册商标或商号。
+          </p>
+        </div>
+
+        <h2>2. 用户权利与责任</h2>
+        <ul>
+          <li><strong>合法使用</strong>：用户承诺使用本软件仅用于合法的软件开发、调试和项目管理，不得用于任何违反法律法规的攻击或侵入行为。</li>
+          <li><strong>环境安全</strong>：用户自行负责其服务端宿主机（Host）以及网络环境的安全（包括防火墙设置、Token 复杂度与公网暴露防护）。</li>
+          <li><strong>执行风险</strong>：在开启命令执行审批或自动授权模式时，因自主执行的 Shell 指令或代码变更对开发环境造成的意外修改或数据丢失，由用户自行承担相应责任。</li>
+        </ul>
+
+        <h2>3. 免责声明</h2>
+        <p>本软件按“现状”（AS-IS）和“现有”基础提供，不提供任何明示或暗示的担保，包括但不限于对适销性、特定用途适用性或无侵权行为的担保。</p>
+
+        <h2>4. 条款修改与联系</h2>
+        <p>如果您对本服务条款有任何疑问，请通过以下方式联系：</p>
+        <ul>
+          <li><strong>联系邮箱</strong>：<a href="mailto:cddch1n@icloud.com" style="color: var(--accent);">cddch1n@icloud.com</a></li>
+          <li><strong>官方仓库</strong>：<a href="https://github.com/cddchen/Cloud" style="color: var(--accent);" target="_blank" rel="noopener">https://github.com/cddchen/Cloud</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p style="margin-bottom: 0.5rem;">
+        本产品是基于 Claude Agent SDK 构建的独立产品，与 Anthropic 不存在隶属、背书或赞助关系。
+      </p>
+      <p>
+        &copy; 2026 cddchen. All rights reserved.
+        <a href="index.html">返回支持主页</a>
+        <a href="privacy.html">隐私政策 (Privacy Policy)</a>
+        <a href="https://github.com/cddchen/Cloud">GitHub 仓库</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function updateSwitcherUI(lang) {
+      var btnEn = document.getElementById('btn-en');
+      var btnZh = document.getElementById('btn-zh');
+      if (btnEn && btnZh) {
+        if (lang === 'zh') {
+          btnZh.classList.add('active');
+          btnEn.classList.remove('active');
+        } else {
+          btnEn.classList.add('active');
+          btnZh.classList.remove('active');
+        }
+      }
+    }
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      try {
+        localStorage.setItem('cloud_support_lang', lang);
+      } catch (e) {}
+      updateSwitcherUI(lang);
+      if (lang === 'zh') {
+        document.title = "Cloud - 服务条款 | Terms of Service";
+      } else {
+        document.title = "Cloud - Terms of Service";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var currentLang = document.documentElement.lang || 'en';
+      updateSwitcherUI(currentLang);
+    });
+  </script>
+</body>
+</html>
