@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud - 技术支持与帮助中心 | Technical Support & Help Center</title>
+  <meta name="description" content="Cloud 官方公开技术支持页面与常见问题解答。基于 Claude Agent SDK 的独立开发工具，为工程师提供移动端远程控制与协同能力。">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(255, 255, 255, 0.16);
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.2);
+      --code-bg: rgba(0, 0, 0, 0.5);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1.25rem 4rem;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 76px;
+      height: 76px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+      border-radius: 20px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px var(--accent-glow);
+      font-size: 2.2rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .disclaimer-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 90%;
+    }
+
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--card-hover-border);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .faq-item {
+      cursor: pointer;
+    }
+
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-content {
+      margin-top: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: none;
+      border-top: 1px solid var(--card-border);
+      padding-top: 0.75rem;
+    }
+
+    .faq-item.open .faq-content {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.9rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      color: #93c5fd;
+      margin: 0.75rem 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #2563eb;
+      color: #fff;
+      padding: 0.75rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="app-icon">☁️</div>
+      <h1>Cloud 技术支持与帮助中心</h1>
+      <p class="subtitle">AI Agent 远程编程控制终端 | Mobile Companion for AI Coding Agents</p>
+      <div class="disclaimer-badge">
+        An independent product powered by the Claude Agent SDK · Not affiliated with Anthropic
+      </div>
+    </header>
+
+    <!-- 支持通道与快速反馈 -->
+    <section class="section">
+      <h2 class="section-title">🛠️ 技术支持与问题反馈 (Support & Feedback)</h2>
+      <div class="card">
+        <p style="margin-bottom: 1rem;">
+          如果您在使用 <strong>Cloud</strong> 客户端或服务端连接过程中遇到任何故障、技术疑问或有功能建议，欢迎随时联系我们：
+        </p>
+        <div class="button-group">
+          <a class="btn" href="https://github.com/cddchen/Cloud/issues" target="_blank" rel="noopener">
+            <span>🐛</span> 提交 GitHub Issue
+          </a>
+          <a class="btn btn-secondary" href="mailto:support@cddchen.com">
+            <span>✉️</span> 邮箱联系技术支持
+          </a>
+          <a class="btn btn-secondary" href="PRIVACY.md">
+            <span>🔒</span> 隐私政策 (Privacy)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 快速部署与连接指南 -->
+    <section class="section">
+      <h2 class="section-title">⚡ 快速部署与连接指南 (Quick Start)</h2>
+      <div class="card">
+        <p><strong>第一步：在电脑或工作站启动 Host 服务</strong></p>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
+          需要 Node.js &gt;= 22。在您的项目服务端目录配置安全 Token 并运行：
+        </p>
+        <pre><code>export HOST_AUTH_TOKEN="your-secure-token"
+export HOST_PORT=3000
+node dist/index.js --port 3000</code></pre>
+
+        <p style="margin-top: 1rem;"><strong>第二步：移动端配对连接</strong></p>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
+          打开手机端 <strong>Cloud</strong> App，在“连接设置”输入您的 Host 地址（如 <code>http://192.168.1.100:3000</code> 或 Tailscale 节点）及预设 Token，点击“测试并连接”即可完成同步。
+        </p>
+      </div>
+    </section>
+
+    <!-- 常见问题解答 -->
+    <section class="section">
+      <h2 class="section-title">❓ 常见问题解答 (FAQ)</h2>
+
+      <div class="card faq-item" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span>Q1: 为什么移动端提示“连接失败”或“请求超时”？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          请检查以下三项：
+          <br>1. <strong>网络连通性</strong>：手机与服务端需处于同一局域网 Wi-Fi，或已接入 Tailscale 等虚拟内网；
+          <br>2. <strong>防火墙放行</strong>：确保宿主机防火墙未屏蔽对应端口（默认 3000）；
+          <br>3. <strong>本地网络权限</strong>：iOS 用户请前往系统“设置” -&gt; “隐私” -&gt; “本地网络”，确认已授予 Cloud 权限。
+        </div>
+      </div>
+
+      <div class="card faq-item" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span>Q2: 提示“鉴权失败 (Authentication Failed)”怎么处理？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          移动端输入的访问 Token 必须与服务端启动时通过 <code>HOST_AUTH_TOKEN</code> 环境变量设置的字符串完全匹配。请检查有无误复制前后空格。
+        </div>
+      </div>
+
+      <div class="card faq-item" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span>Q3: 手机离开 App 或锁屏休眠，长耗时任务会中断吗？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          <strong>不会。</strong> 服务端持有 Agent 的完整独立运行时，长耗时任务会在后台持续平稳执行。移动端恢复前台后，系统会自动重连并拉取最新状态增量，无缝对齐最新进度。
+        </div>
+      </div>
+
+      <div class="card faq-item" onclick="toggleFaq(this)">
+        <div class="faq-header">
+          <span>Q4: 数据安全与隐私保障机制是怎样的？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          Cloud 坚持<strong>纯私有端到端直连</strong>设计。您的源码、命令提示词与会话历史仅在您的手机与您自己的私有 Host 之间传输，不存在任何收集、解析或存储您代码的第三方中间服务器。
+        </div>
+      </div>
+    </section>
+
+    <!-- 隐私与声明 -->
+    <footer>
+      <p style="margin-bottom: 0.5rem;">
+        本产品是基于 Claude Agent SDK 构建的独立产品，与 Anthropic 不存在隶属、背书或赞助关系。
+      </p>
+      <p>
+        &copy; 2026 cddchen. All rights reserved.
+        <a href="PRIVACY.md">隐私政策 (Privacy Policy)</a>
+        <a href="TERMS.md">服务条款 (Terms)</a>
+        <a href="https://github.com/cddchen/Cloud">GitHub 仓库</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
