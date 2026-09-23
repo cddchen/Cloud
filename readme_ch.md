@@ -37,10 +37,13 @@
 
 Cloud 采用 **客户端-服务端直连架构**。移动端应用（iOS / Android）作为控制终端，通过`公网/局域网/Tailscale组网`等形式连接您本地工作站或云服务器上运行的 `cloud host`，基于`claude agent sdk`直接传输相关数据，不通过任何第三方服务。
 
-### 1. 服务端环境要求
+### 1. 服务端环境要求与模型授权
 - **操作系统**：macOS, Linux
 - **运行时环境**：Node.js >= 22.0.0
-- **前置依赖**：Claude Code
+- **核心前置依赖**：**Claude Code**（主机端必须安装并可运行 Claude Code）
+- **模型授权方式（灵活支持）**：
+  - **官方订阅**：支持直接使用 Claude 官方订阅账号（Pro / Team 等）在主机端登录使用；
+  - **第三方 API / 代理**：完全支持通过环境变量配置自定义 API Key 或反向代理中转（如 `ANTHROPIC_API_KEY`、`ANTHROPIC_BASE_URL` 等），无缝适配第三方模型服务商或企业内网网关。
 
 ### 2. 启动 Host 服务
 在您的开发工作站或服务器上配置环境变量并启动 Host：
@@ -84,6 +87,12 @@ npx @cddchen/cloud@latest start --global
 ### Q4: 敏感操作审批机制是如何运作的？
 - 当 Agent 尝试执行危险命令（例如删除文件、修改重要代码或执行高风险 Bash 命令）时，服务端会触发挂起拦截；
 - 您的移动端会即时收到审批弹窗（Approval Sheet），您可以选择“批准执行”或“拒绝并给出补充指示”。未经您的明确授权，Agent 无法越权执行。
+
+### Q5: 主机端必须使用 Claude Code 吗？支持哪些授权方式？
+- **是的**。Cloud 服务端运行深度依赖本机已配置好的 **Claude Code** 环境。
+- **授权方式高度自由**：
+  1. **官方订阅**：直接使用 Claude 官方 Pro / Team / Enterprise 等订阅账号在主机端登录；
+  2. **第三方 API / 代理**：完全支持配置自定义 API Key 与第三方中转代理（配置环境变量如 `ANTHROPIC_API_KEY`、`ANTHROPIC_BASE_URL`），不受官方账号或网页端限制。
 
 ---
 

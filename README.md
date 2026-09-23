@@ -38,10 +38,13 @@ If you encounter any issues, unexpected behaviors, or have feature suggestions w
 
 Cloud utilizes a **direct client-to-host architecture**. The mobile application (iOS / Android) operates as a control console, connecting to the `cloud host` running on your local workstation or cloud server via `Public Network / LAN / Tailscale Mesh`. Data is transmitted directly based on the `Claude Agent SDK`, without passing through any third-party intermediate services.
 
-### 1. Host System Requirements
+### 1. Host System Requirements & Model Authorization
 - **Operating System**: macOS, Linux
 - **Runtime**: Node.js >= 22.0.0
-- **Prerequisites**: Claude Code
+- **Core Prerequisite**: **Claude Code** (Host requires a locally installed, functional Claude Code environment)
+- **Model Authentication Options (Flexible)**:
+  - **Official Subscription**: Works out-of-the-box with official Anthropic Claude subscriptions (Pro / Team / Enterprise, etc.) logged into Claude Code;
+  - **Third-Party API / Reverse Proxy**: Fully supports custom API Keys and proxy endpoints via environment variables (such as `ANTHROPIC_API_KEY` and `ANTHROPIC_BASE_URL`), seamlessly working with third-party providers or corporate internal gateways.
 
 ### 2. Launching the Host Service
 Configure parameters or environment variables on your workstation or server and start the Host:
@@ -86,6 +89,12 @@ npx @cddchen/cloud@latest start --global
 ### Q4: How does sensitive operation approval work?
 - When an agent attempts potentially destructive operations (e.g., file overwrites, deletions, or high-risk bash commands), execution halts until confirmed.
 - An interactive **Approval Sheet** immediately appears on your phone, allowing you to review the exact command and either approve it or reject it with additional instructions.
+
+### Q5: Is Claude Code mandatory on the Host? What authorization methods are supported?
+- **Yes.** Cloud Host operation fundamentally relies on the locally configured **Claude Code** environment.
+- **Highly Flexible Authorization**:
+  1. **Official Subscription**: Log in directly with your official Claude Pro / Team / Enterprise account on the host;
+  2. **Third-Party API / Proxy**: Fully supports configuring custom API keys and proxy base URLs (e.g., `ANTHROPIC_API_KEY`, `ANTHROPIC_BASE_URL`), without restrictions from official web subscriptions.
 
 ---
 

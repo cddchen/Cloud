@@ -368,7 +368,7 @@
           </p>
           <p><strong>Step 1: Start the Host service on your workstation or VM</strong></p>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-            Requires Node.js &gt;= 22 and Claude Code. Launch via CLI parameters or environment variables:
+            Requires Node.js &gt;= 22 and Claude Code. You can authenticate Claude Code via official subscriptions (Pro/Team) or custom third-party API keys and proxy endpoints (e.g. <code>ANTHROPIC_API_KEY</code>, <code>ANTHROPIC_BASE_URL</code>).
           </p>
           <pre><code># 1. Start via CLI parameters (default port: 8787, random 6-digit token)
 npx @cddchen/cloud@latest start --port=8787 --token=your-secure-random-token --global
@@ -393,7 +393,7 @@ npx @cddchen/cloud@latest start --global</code></pre>
           </p>
           <p><strong>第一步：在电脑或工作站启动 Host 服务</strong></p>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-            环境要求 Node.js &gt;= 22 与 Claude Code。可通过 CLI 参数或环境变量配置：
+            环境要求 Node.js &gt;= 22 与 Claude Code。支持使用 Claude 官方订阅账号（Pro/Team 等）在主机端登录，或通过环境变量配置第三方 API Key / 反向代理网关（如 <code>ANTHROPIC_API_KEY</code>、<code>ANTHROPIC_BASE_URL</code>）。
           </p>
           <pre><code># 1. 通过命令行工具参数启动（默认端口 8787，默认随机 6 位数 Token）
 npx @cddchen/cloud@latest start --port=8787 --token=your-secure-random-token --global
@@ -458,6 +458,19 @@ npx @cddchen/cloud@latest start --global</code></pre>
             Cloud is engineered with an end-to-end direct private architecture. Your codebase, prompt instructions, and chat sessions stream exclusively between your mobile device and your private Host. There is zero telemetry, no ad tracking, and no intermediary cloud inspection.
           </div>
         </div>
+
+        <div class="card faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>Q5: Is Claude Code mandatory on the Host? What authorization methods are supported?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-content">
+            <strong>Yes.</strong> Cloud Host fundamentally relies on a functional <strong>Claude Code</strong> environment on the host.<br>
+            <strong>Flexible Authorization:</strong><br>
+            1. <strong>Official Subscription</strong>: Log in directly with your Anthropic Claude Pro / Team / Enterprise account on the host;<br>
+            2. <strong>Third-Party API / Proxy</strong>: Fully supports configuring custom API keys and proxy URLs via environment variables (such as <code>ANTHROPIC_API_KEY</code> and <code>ANTHROPIC_BASE_URL</code>), without restrictions from official web subscriptions.
+          </div>
+        </div>
       </div>
 
       <div class="lang-zh">
@@ -503,6 +516,19 @@ npx @cddchen/cloud@latest start --global</code></pre>
           </div>
           <div class="faq-content">
             Cloud 坚持<strong>纯私有端到端直连</strong>设计。您的源码、命令提示词与会话历史仅在您的手机与您自己的私有 Host 之间传输，不存在任何收集、解析或存储您代码的第三方中间服务器。
+          </div>
+        </div>
+
+        <div class="card faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>Q5: 主机端必须使用 Claude Code 吗？支持哪些授权方式？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-content">
+            <strong>是的。</strong> Cloud 服务端运行深度依赖本机已配置好的 <strong>Claude Code</strong> 环境。<br>
+            <strong>授权方式高度自由：</strong><br>
+            1. <strong>官方订阅</strong>：直接在主机端使用 Claude 官方 Pro / Team / Enterprise 订阅账号登录；<br>
+            2. <strong>第三方 API / 代理</strong>：完全支持配置您自己的第三方 API Key 或中转网关（配置环境变量如 <code>ANTHROPIC_API_KEY</code>、<code>ANTHROPIC_BASE_URL</code>），不受官方网页端限制。
           </div>
         </div>
       </div>
