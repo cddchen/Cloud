@@ -4,6 +4,8 @@
 
 Welcome to the official technical support and documentation hub for **Cloud** (Mobile Companion & Control Terminal for AI Coding Agents).
 
+> ✈️ **iOS Public Beta**: Join via TestFlight → [https://testflight.apple.com/join/BxQvuzYG](https://testflight.apple.com/join/BxQvuzYG)
+
 > **Brand & Technology Disclaimer**
 > An independent product powered by the Claude Agent SDK.
 > Not affiliated with, endorsed by, or sponsored by Anthropic.

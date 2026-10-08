@@ -4,6 +4,8 @@
 
 欢迎访问 **Cloud** 官方公开技术支持与帮助中心。Cloud 是专为开发者打造的 AI 编程智能体（Agent）移动端控制与协同终端。
 
+> ✈️ **iOS TestFlight 公测**：点击加入 → [https://testflight.apple.com/join/BxQvuzYG](https://testflight.apple.com/join/BxQvuzYG)
+
 > **品牌与技术依赖免责声明**
 > 本产品是基于 Claude Agent SDK 构建的独立产品，与 Anthropic 不存在隶属、背书或赞助关系。
 > An independent product powered by the Claude Agent SDK. Not affiliated with, endorsed by, or sponsored by Anthropic.
