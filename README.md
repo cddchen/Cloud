@@ -4,6 +4,7 @@
 
 Welcome to the official technical support and documentation hub for **Cloud** (Mobile Companion & Control Terminal for AI Coding Agents).
 
+> 📱 **App Store (Official)**: Download on the App Store → [https://apps.apple.com/app/id6813359140](https://apps.apple.com/app/id6813359140)<br/>
 > ✈️ **iOS Public Beta**: Join via TestFlight → [https://testflight.apple.com/join/BxQvuzYG](https://testflight.apple.com/join/BxQvuzYG)
 
 > **Brand & Technology Disclaimer**
@@ -65,7 +66,7 @@ npx @cddchen/cloud@latest start --global
 ```
 
 ### 3. Pairing with Mobile Client
-1. Launch **Cloud** on your mobile device;
+1. Launch **Cloud** on your mobile device (install from the [App Store](https://apps.apple.com/app/id6813359140) or [TestFlight](https://testflight.apple.com/join/BxQvuzYG));
 2. Navigate to **Connection Settings**;
 3. Enter your Host address (e.g., LAN IP `http://192.168.1.100:3000` or Tailscale node address);
 4. Enter the configured `token`;

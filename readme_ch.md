@@ -4,6 +4,7 @@
 
 欢迎访问 **Cloud** 官方公开技术支持与帮助中心。Cloud 是专为开发者打造的 AI 编程智能体（Agent）移动端控制与协同终端。
 
+> 📱 **App Store 官方正式版**：App Store 下载 → [https://apps.apple.com/app/id6813359140](https://apps.apple.com/app/id6813359140)<br/>
 > ✈️ **iOS TestFlight 公测**：点击加入 → [https://testflight.apple.com/join/BxQvuzYG](https://testflight.apple.com/join/BxQvuzYG)
 
 > **品牌与技术依赖免责声明**
@@ -63,7 +64,7 @@ npx @cddchen/cloud@latest start --global
 ```
 
 ### 3. 移动端配对连接
-1. 打开手机端 **Cloud** 应用；
+1. 打开手机端 **Cloud** 应用（可前往 [App Store](https://apps.apple.com/app/id6813359140) 官方下载或通过 [TestFlight](https://testflight.apple.com/join/BxQvuzYG) 安装）；
 2. 进入 **连接设置 (Connection Settings)** 页面；
 3. 输入您的 Host 访问地址（例如局域网 IP `http://192.168.1.100:3000` 或 Tailscale 节点地址）；
 4. 填入设置的 `token`；

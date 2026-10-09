@@ -237,10 +237,12 @@ pre {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* TestFlight CTA */
+/* App Store & TestFlight CTA */
 .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.85rem; margin-top: 1.5rem; }
-.btn-tf { background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%); font-weight: 600; box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35); transition: transform 0.15s ease, box-shadow 0.2s ease; }
-.btn-tf:hover { background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37, 99, 235, 0.5); }
+.btn-appstore { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); font-weight: 600; box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4); transition: transform 0.15s ease, box-shadow 0.2s ease; }
+.btn-appstore:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37, 99, 235, 0.55); }
+.btn-tf { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); font-weight: 600; box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35); transition: transform 0.15s ease, box-shadow 0.2s ease; }
+.btn-tf:hover { background: linear-gradient(135deg, #0369a1 0%, #075985 100%); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(2, 132, 199, 0.5); }
 .inline-link { color: #60a5fa; text-decoration: underline; text-underline-offset: 2px; }
 .inline-link:hover { color: #93c5fd; }
 
